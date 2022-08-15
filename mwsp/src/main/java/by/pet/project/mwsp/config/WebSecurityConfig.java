@@ -42,7 +42,7 @@ public class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 		http.csrf()
 				.disable()
 				.authorizeRequests()
-				.mvcMatchers("/swagger-ui/**", "/swagger-resources/**", "/v2/api-docs/**")
+				.mvcMatchers("/swagger-ui/**", "/swagger-resources/**", "/v2/api-docs/**","/registration")
 				.permitAll()
 				.mvcMatchers("/**")
 				//				.authenticated()

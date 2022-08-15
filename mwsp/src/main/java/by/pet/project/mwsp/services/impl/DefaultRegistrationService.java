@@ -33,7 +33,7 @@ public class DefaultRegistrationService implements RegistrationService {
 		userRepresentation.setEmail(createDto.getEmail());
 		userRepresentation.setEnabled(true);
 		userRepresentation.setEmailVerified(true);
-		userRepresentation.setRealmRoles(List.of("USER"));
+		userRepresentation.setGroups(List.of("USERS"));
 
 		Response response = keycloak.realm("chat").users().create(userRepresentation);
 

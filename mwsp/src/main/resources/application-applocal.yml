@@ -1,15 +1,25 @@
 server:
   port: 8086
 spring:
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:49154/chat
+    username: postgres
+    password: postgrespw
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate:
+      ddl-auto: update
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
   main:
     allow-bean-definition-overriding: true
 keycloak:
-  authServerUrl: http://host.docker.internal:8484/auth
+  authServerUrl: http://host.docker.internal:8080
   realm: chat
   resource: chat-app-be
   ssl-required: external
   credentials:
-    secret: 7xggFgU1lp0H37PNkPvL3Ycf5iE3qepY
+    secret: ro614xlwXU9HgjovjAUBvS  zCXJHVvSRS
